@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подкаст</title>
+    <style>
+        :root {
+            --color-background: #1a1a2e;
+            --color-surface: #16213e;
+            --color-primary: #0f3460;
+            --color-accent: #e94560;
+            --color-text: #f1f1f1;
+            --color-text-secondary: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .podcast-container {
+            background: var(--color-surface);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .podcast-cover {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+
+        .podcast-cover svg {
+            width: 120px;
+            height: 120px;
+            opacity: 0.9;
+        }
+
+        .podcast-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .podcast-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 8px;
+        }
+
+        .podcast-subtitle {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+        }
+
+        .audio-player {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        audio {
+            width: 100%;
+            height: 50px;
+            border-radius: 12px;
+            outline: none;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background: var(--color-primary);
+        }
+
+        audio::-webkit-media-controls-play-button,
+        audio::-webkit-media-controls-current-time-display,
+        audio::-webkit-media-controls-time-remaining-display {
+            filter: invert(1);
+        }
+
+        .podcast-meta {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .meta-value {
+            font-size: 16px;
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .description {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 640px) {
+            .podcast-container {
+                padding: 30px 20px;
+            }
+
+            .podcast-title {
+                font-size: 24px;
+            }
+
+            .podcast-cover svg {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="podcast-container">
+        <div class="podcast-cover">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" fill="white"/>
+                <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="white" stroke-width="2"/>
+                <path d="M19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12Z" stroke="white" stroke-width="2" stroke-dasharray="3 3"/>
+                <path d="M12 3V1M12 23V21M21 12H23M1 12H3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <div class="podcast-info">
+            <h1 class="podcast-title">Мой Подкаст</h1>
+            <p class="podcast-subtitle">Новый эпизод</p>
+        </div>
+
+        <div class="audio-player">
+            <audio controls>
+                <source src="pdkst.m4a" type="audio/mp4">
+                Ваш браузер не поддерживает аудио элемент.
+            </audio>
+        </div>
+
+        <div class="description">
+            <p>«Сделано в России» — представляем аудиоподкасты об отечественном прогрессе России. Расскажите о новых построенных и работающих малых, средних, крупных предприятиях и учреждениях в различных сферах жизнедеятельности современной России.</p>
+        </div>
+    </div>
+</body>
+</html>
